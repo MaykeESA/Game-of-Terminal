@@ -1,10 +1,8 @@
 import enemy
 import inventory
+import menu
 from random import randrange
-from menu import space
-from menu import end
 from time import sleep
-
 
 
 def game_main():
@@ -19,13 +17,13 @@ def game_main():
     print('|           (2)           |')
     print('-=' * 13 + '-')
     choice()
-    end()
+    menu.end()
 
 
 def choice():
     while True:
         c1 = input('Escolha um caminho: ').strip()
-        space()
+        menu.space()
         if c1 == '1':
             norte_1()
             break
@@ -52,7 +50,7 @@ def norte_1():
     print('Você avistou uma casa e algo no fim da estrada! ')
     sleep(1)
     cn1 = input('(1) Casa / (2) Estrada: ')
-    space()
+    menu.space()
     if cn1 == '1':
         print('Você entra na casa e se depara com uma pessoa...')
         sleep(2)
@@ -96,7 +94,7 @@ def norte_casa_1():
         inventory.inventory_main()
     else:
         print('Valor Inválido!a')
-        space()
+        menu.space()
         norte_casa_1()
 
 
